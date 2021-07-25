@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2><b>Network Automation</b></h2>
+    <div class="container">
+<div class="mt-4 card-group" style="margin:auto;">
+    <div class = "row"></div> 
+    <div class="card border-primary mb-4" style="max-width: 18rem;">
+        <div class="card-body text-primary">
+                <h5 class="card-title">{{all_device}}</h5>
+                <div class="mr-3 text-right" style="font-size: 36px;">
+                    <i class="fa fa-list fa-lg"></i>
+                </div>
+        </div>
+        <div class="card-footer bg-primary border-primary text-white"alt="...">Total Devices</div>
+    </div>
+
+    <div class="card border-success mb-4" style="max-width: 18rem;">
+        <div class="card-body text-success">
+                <h5 class="card-title">{{cisco_device}}</h5>
+                <div class="mr-3 text-right" style="font-size: 36px;">
+                    <i class="fa fa-hdd-o fa-lg"></i>
+                </div>
+        </div>
+        <div class="card-footer bg-success border-success text-white" alt="...">Cisco Devices</div>
+    </div>    
+    
+    <div class="card border-danger mb-4" style="max-width: 18rem;">
+        <div class="card-body text-danger">
+            <h5 class="card-title">{{mikrotik_device}}</h5>
+            <div class="mr-3 text-right" style="font-size: 36px;" >
+                <i class="fa fa-list fa-lg"></i>
+            </div>
+        </div>
+        <div class="card-footer bg-danger border-danger text-white" alt="...">Mikrotik Devices</div>
+    </div>
+</div>
+</div>
+
+<h3 class="mt-4">Last Event</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#
+            Target Device</th>
+            <th>Action</th>
+            <th>Status</th>
+            <th>Time Done</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in last_event %}
+        <tr>
+            <td>{{log.target}}</td>
+            <td>{{log.action}}</td>
+            <td>{{log.status}}</td>
+            <td>{{log.time}}</td>
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+{% endblock content %}

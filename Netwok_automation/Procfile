@@ -1,1 +1,1 @@
-web: gunicorn DJANGONETWORK_AUTOMATION.wsgi --log-file -
+web gunicorn DJANGONETWORK_AUTOMATION.wsgi --log-file -

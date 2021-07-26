@@ -1,1 +1,1 @@
-web: gunicorn djangoNetwork_automation.wsgi 
+web: gunicorn djangoNetwork_automation.py
